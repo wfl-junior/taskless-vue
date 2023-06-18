@@ -8,5 +8,11 @@
         <span class="text-app-green-500">#</span>Partiu
       </h1>
     </div>
+
+    <div class="flex items-center gap-10">
+      <TodoCompletedFilterButton label="Todas" state="all" />
+      <TodoCompletedFilterButton label="Abertas" state="open" />
+      <TodoCompletedFilterButton label="Concluídas" state="completed" />
+    </div>
   </div>
 </template>

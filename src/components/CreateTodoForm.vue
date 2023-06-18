@@ -1,0 +1,29 @@
+<script setup lang="ts">
+  const title = ref("");
+  const todos = useTodos();
+
+  function handleAddTodo(event: Event) {
+    event.preventDefault();
+
+    todos.value.push({
+      title: title.value,
+      isCompleted: false,
+      id: Date.now().toString(),
+    });
+
+    title.value = "";
+  }
+</script>
+
+<template>
+  <form @submit="handleAddTodo" class="flex items-center gap-8 flex-1">
+    <Input
+      type="text"
+      class="flex-1"
+      v-model="title"
+      placeholder="Nome da tarefa"
+    />
+
+    <Button type="submit">Criar nova tarefa</Button>
+  </form>
+</template>

@@ -37,6 +37,9 @@ module.exports = {
           },
         },
       },
+      boxShadow: {
+        "button-hover": "0px 4px 32px 0px #32552C52",
+      },
     },
   },
   plugins: [],
