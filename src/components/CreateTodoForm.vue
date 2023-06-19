@@ -1,17 +1,27 @@
 <script setup lang="ts">
+  import { api } from "~/lib/axios";
+  import { Todo } from "~/types/Todo";
+
   const title = ref("");
   const todos = useTodos();
+  const isLoading = ref(false);
 
-  function handleAddTodo(event: Event) {
+  async function handleAddTodo(event: Event) {
     event.preventDefault();
+    isLoading.value = true;
 
-    todos.value.push({
-      title: title.value,
-      isCompleted: false,
-      id: Date.now().toString(),
-    });
+    try {
+      const { data } = await api.post<{ todo: Todo }>("/todos", {
+        title: title.value,
+      });
 
-    title.value = "";
+      todos.value.push(data.todo);
+      title.value = "";
+    } catch (error) {
+      console.error(error);
+    } finally {
+      isLoading.value = false;
+    }
   }
 </script>
 
@@ -25,6 +35,6 @@
       placeholder="Nome da tarefa"
     />
 
-    <Button type="submit">Criar nova tarefa</Button>
+    <Button type="submit" :disabled="isLoading">Criar nova tarefa</Button>
   </form>
 </template>
