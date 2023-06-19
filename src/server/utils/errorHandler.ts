@@ -11,6 +11,7 @@ export function errorHandler(error: unknown, event: any) {
   }
 
   setResponseStatus(event, 500);
+  console.error(error);
 
   return {
     message: "Houston, we have a problem.",
