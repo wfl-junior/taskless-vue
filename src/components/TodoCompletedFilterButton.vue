@@ -19,7 +19,7 @@
     class="flex items-center gap-2 rounded focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-app-green-500 focus-visible:ring-offset-8 focus-visible:ring-offset-app-gray-900"
   >
     <span
-      class="font-bold text-base"
+      class="font-bold text-sm sm:text-base"
       :class="{
         'text-app-gray-200': !isActive,
         'text-app-green-500': isActive,
@@ -29,7 +29,7 @@
     </span>
 
     <span
-      class="transition-colors text-sm font-normal py-1 px-2 rounded-full flex items-center justify-center leading-none"
+      class="transition-colors text-xs sm:text-sm font-normal py-1 sm:py-0.5 px-2 rounded-full flex items-center justify-center leading-none"
       :class="{
         'bg-app-gray-700 text-app-gray-200': !isActive,
         'bg-app-green-500 text-app-gray-900': isActive,

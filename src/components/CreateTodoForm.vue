@@ -26,9 +26,13 @@
 </script>
 
 <template>
-  <form @submit="handleAddTodo" class="flex items-center gap-8 flex-1">
+  <form
+    @submit="handleAddTodo"
+    class="flex flex-col xs:flex-row xs:items-center w-full gap-4 sm:gap-6 md:gap-8 flex-1"
+  >
     <Input
       required
+      :size="10"
       type="text"
       v-model="title"
       class="flex-1 max-w-[592px]"

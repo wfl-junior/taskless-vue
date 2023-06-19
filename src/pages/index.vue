@@ -26,15 +26,25 @@
 <template>
   <Hero />
 
-  <div class="mt-12 flex items-center gap-8 justify-between">
+  <div
+    class="md:mt-12 mt-6 xs:mt-8 flex items-center gap-8 justify-between flex-col md:flex-row"
+  >
     <CreateTodoForm />
 
-    <Input
-      type="text"
-      v-model="search"
-      placeholder="Pesquisar"
-      class="flex-1 max-w-[274px]"
-    />
+    <div class="relative md:max-w-[274px] w-full flex-1">
+      <Input
+        :size="10"
+        type="text"
+        v-model="search"
+        placeholder="Pesquisar"
+        class="w-full pr-9 sm:pr-14"
+      />
+
+      <MagnifyingGlassIcon
+        :size="16"
+        class="text-app-gray-200 absolute right-3 sm:right-6 top-1/2 -translate-y-1/2"
+      />
+    </div>
   </div>
 
   <div class="flex-1 flex flex-col mt-8">
