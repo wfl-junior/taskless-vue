@@ -18,9 +18,10 @@
 <template>
   <form @submit="handleAddTodo" class="flex items-center gap-8 flex-1">
     <Input
+      required
       type="text"
-      class="flex-1"
       v-model="title"
+      class="flex-1 max-w-[592px]"
       placeholder="Nome da tarefa"
     />
 

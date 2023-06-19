@@ -17,6 +17,6 @@
     @input="
       $emit('update:modelValue', ($event.target as HTMLInputElement).value)
     "
-    class="max-w-[592px] px-6 py-4 text-sm font-normal placeholder:text-app-gray-200 text-app-gray-50 rounded-lg bg-app-gray-700 border border-app-gray-400 focus:outline-none focus:border-app-green-400 transition-colors"
+    class="px-6 py-4 text-sm font-normal placeholder:text-app-gray-200 text-app-gray-50 rounded-lg bg-app-gray-700 border border-app-gray-400 focus:outline-none focus:border-app-green-400 transition-colors"
   />
 </template>
